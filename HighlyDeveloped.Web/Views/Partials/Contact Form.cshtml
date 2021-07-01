@@ -1,0 +1,21 @@
+﻿<!--This is the MVC 5 partial page (Razor) for Contact form-->
+@model HighlyDeveloped.Core.ViewModel.ContactFormViewModel
+@using HighlyDeveloped.Core.Controllers 
+@using (Html.BeginUmbracoForm<ContactController>("HandleContactForm"))
+{
+    @Html.ValidationSummary();
+    @Html.AntiForgeryToken();
+
+    <div class="form-group">
+        <label for="your-name-textbox">Your name *</label>
+        <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+        @Html.TextBoxFor(m => m.Name, new { @class="form-control form-control-lg", placeholder="Your Name", maxlength = "80"} )
+    </div>
+
+    <!--Put the rest of the form elements-->
+
+    <div class="form-group">
+        <button class="btn btn-outline-primary btn-lg" type="submit">Send</button>
+    </div>
+
+}

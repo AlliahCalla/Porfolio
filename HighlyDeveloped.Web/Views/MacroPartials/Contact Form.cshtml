@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+//Create a Partial Macro first and determine
+//the action (Render Contact Form) 
+//and the name of the controller (Contact)
+    @Html.Action("RenderContactForm", "Contact")
+    
+//After doing so make sure to check the Macro and add parameters of check the rich
+//text editor if we need to use it.
+
+//Then start creating the Controller in the Custom Project that we created
+}

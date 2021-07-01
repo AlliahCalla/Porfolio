@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var typedMediaPickerSingle = Model.Value<MediaWithCrops>("heroImageComposition");
+}
+
+
+@{
+    if (typedMediaPickerSingle != null)
+    {
+
+        var heroImageUrl = @typedMediaPickerSingle.MediaItem.Url();
+        <div class="jumbotron jumbotron-fluid home-hero" style="background-image: url('@heroImageUrl')">
+            <div class="overlay"></div>
+            <div class="inner">
+                <div class="container">
+                    <h1 class="display-4">@Model.Value("heroTitleComposition")</h1>
+                    <p class="lead">@Model.Value("heroSubtitleComposition")</p>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
